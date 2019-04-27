@@ -1,0 +1,41 @@
+/* pages/shouhuo/shouhuo.wxss */
+page{
+  height: 100%;
+}
+.shuoBox{
+  position: relative;
+  height: 100%;
+}
+.shuoBox .head{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+.shuoBox .head text{
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+
+.shuoBox .list{
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1px solid gainsboro;
+}
+.shuoBox .list text{
+  font-size: 28rpx;
+}
+.shuoBox .btn{
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  padding: 0;
+  margin: 0;
+}
+
+.shuoBox .lastbtn{
+  width: 100%;
+  border-radius: 0;
+  position: absolute;
+  bottom: 0;
+}

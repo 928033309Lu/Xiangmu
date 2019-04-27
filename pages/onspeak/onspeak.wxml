@@ -1,0 +1,25 @@
+<!--pages/onspeak/onspeak.wxml-->
+<text>此页面是自定义服务器，实现在线聊天</text>
+<scroll-view 
+scroll-y
+class='speakbox'>
+<view class='speakbox'>
+    <view wx:for="{{messArr}}" wx:key="index">
+      <image src='/img/wx.jpg' style='width:80rpx;height:80rpx;'></image>
+      <text>{{item}}</text>
+    </view>
+    
+    <view class='right'>
+      <image src='/img/wx.jpg' style='width:80rpx;height:80rpx;'></image>
+      <text>sss</text>
+    </view>
+</view> 
+</scroll-view>
+<view class='bottombox'>
+    <input bindinput='oninput' value="{{value}}" placeholder-class="ipt" placeholder='请输入'></input>
+    <button bindtap='aaa'>发送</button>
+</view>
+
+
+
+

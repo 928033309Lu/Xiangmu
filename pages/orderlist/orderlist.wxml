@@ -1,0 +1,6 @@
+<!--pages/orderlist/orderlist.wxml-->
+<text>我的订单</text>
+
+<view>
+  代付款--已付款--代发货--已发货---。。。。
+</view>

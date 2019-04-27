@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/view/view",
+    "pages/shopcar/shopcar",
+    "pages/orderlist/orderlist",
+    "pages/payment/payment",
+    "pages/shouhuo/shouhuo",
+    "pages/address/address",
+    "pages/home/home",
+    "pages/face/face",
+    "pages/details/details",
+    "pages/onspeak/onspeak",
+    "pages/index/index"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "天使童装",
+    "navigationBarTextStyle":"black",
+    "backgroundColor":"#000000",
+    "enablePullDownRefresh": true,
+    "onPullDownRefresh": true,
+    "onReachBottom": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "/images/nav/home-off.png",
+        "selectedIconPath":"/images/nav/home-on.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shopcar/shopcar",
+        "iconPath": "/images/nav/cart-off.png",
+        "selectedIconPath": "/images/nav/cart-on.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/nav/my-off.png",
+        "selectedIconPath": "/images/nav/my-on.png",
+        "text": "我的"
+      }
+    ],
+    "selectedColor":"red",
+    "borderStyle":"white"
+  }
+}

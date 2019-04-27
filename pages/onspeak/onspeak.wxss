@@ -1,0 +1,41 @@
+/* pages/onspeak/onspeak.wxss */
+
+.speakbox{
+  box-sizing: border-box;
+  /* background: gainsboro; */
+}
+
+.speakbox>view{
+  display: flex;
+  align-items: flex-start;
+}
+.right{
+  flex-direction: row-reverse;
+}
+
+
+.bottombox{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  box-sizing: border-box;
+}
+.bottombox>input{
+  background: #F6F8F8;
+  width: 80%;
+  height: 80rpx;
+  padding-left: 40rpx;
+}
+.bottombox>button{
+  padding: 0;
+  margin: 0;
+  width: 20%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx; 
+}
+.ipt{
+  font-size: 26rpx;
+}

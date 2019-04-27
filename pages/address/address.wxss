@@ -1,0 +1,32 @@
+/* pages/address/address.wxss */
+.addressbox{
+  background: gainsboro;
+  padding-top: 20rpx;
+}
+.iptbox{
+  background: #fff;
+  border-bottom: 1px solid gainsboro;
+  display: flex;
+  padding: 20rpx 20rpx;
+  font-size: 28rpx;
+}
+.iptbox>text{
+  margin-right: 20rpx;
+  width: 20%;
+  line-height: 56rpx;
+  
+}
+.iptbox>input{
+  height: 100%;
+  width: 80%;
+  /* background: red; */
+  box-sizing: border-box;
+  padding-left: 20rpx;
+}
+.iptbox .ipt{
+  font-size: 28rpx;
+}
+.btnbox button{
+  border-radius: 0;
+}
+

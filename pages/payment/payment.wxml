@@ -1,0 +1,54 @@
+<!--pages/payment/payment.wxml-->
+<view class='dingdanbox'>
+<view class='null'></view>
+<!-- 收货地址 -->
+  <view class='dingdan_bt'>
+    <view class='dingdan_btdiv1' bindtap='goAddress'>
+      <view class='add'>+</view><view>选择收货地址</view>
+    </view>
+    <view class='dingdan_btdiv2'>＞</view>
+  </view>
+  <view class='bottomline'><image src='/images/addr-line.png'></image></view>
+  <!-- //渲染收货地址 -->
+  <view class='shouhuo' wx:if="{{activeShou}}">
+    <text>收货地址：</text>
+    <text>姓名：{{activeShou.linkMan}}
+    手机：{{activeShou.mobile}}
+    {{activeShou.cityStr}} --- {{activeShou.address}}
+    </text>
+  </view>
+
+  <view class='null'></view>
+  <!-- 商品列表 -->
+  <view class='shangpinlist'>
+    <view class='shangpinbt'>商品列表</view>
+
+    <view class='shangpintu' wx:for="{{daiObj}}" wx:key="index">
+      <view class='spimg'><image src='{{item.img}}'></image></view>
+      <view class='sptxt1'>
+          <view>{{item.name}}</view>
+          <view class='cols'>颜色：{{item.aaacolName}}</view>
+          <view class='sizes'>尺寸：{{item.aaasizeName}}</view>
+      </view>
+      <view class='sptxt2'>
+        <view>￥{{item.price}}</view>
+        <view class='sptxt'>x{{item.num}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='shop_title'>
+    <view>配送方式</view>
+    <view class='bianji'>包邮</view>
+  </view>
+  <view class='beizhu'>
+    <view>备注</view>
+    <input placeholder='如需备注请输入'></input>
+  </view>
+  <view class='shop_footer'>
+    <view class='footer1'></view>
+    <view class='footer2'>合计：￥79+0积分</view>
+    <view class='footer3'>
+      <button bindtap='goSubOrder'>提交订单</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,85 @@
+
+/**index.wxss**/
+.container{
+  background:#F0EDF1;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background:#E85654;
+  height:350rpx;
+}
+.gettouxiang{
+   margin-top:120rpx;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  margin-top:80rpx;
+}
+.userinfo-nickname {
+  color: #fff;
+}
+.my_order{
+  margin-top:10rpx; 
+  background:#fff;
+}
+.my_order .my_money{padding:20rpx;border:1px solid #EDEDED;}
+.my_order .my_money text{padding-left:25rpx;}
+.my_order .my_btn{display:flex;padding-top:30rpx;}
+.my_order .my_btn button{
+  width:45%;
+  color:#fff;
+  height:100rpx;
+  font-size:35rpx;
+  line-height:100rpx;
+  }
+.my_order .my_btn .btn1{background:#1AAC19;}
+.my_order .my_btn .btn2{background:#E6433E;}
+.my_qiandao .my_ul{
+   display:flex;
+   height:120rpx;
+   border-bottom:1rpx solid #EDEDED;
+   line-height:150rpx;
+   justify-content:space-between;
+   padding:0 50rpx;
+}
+.my_qiandao .my_ul button{
+  height:80rpx;
+  line-height:80rpx;
+  font-size:35rpx;
+  margin-top:25rpx;
+}
+.my_qiandao .my_ul text{color:#BFBFBF;}
+.my_qiandao .bind{height:130rpx;}
+.my_qiandao .bind button{width:50%;margin-top:30rpx;}
+.guanyu{
+  height:110rpx;
+  line-height:110rpx;
+  background:#fff;
+  margin-top:25rpx;
+  padding-left:50rpx;
+  }
+.newlogin{
+  height:120rpx;
+  line-height:120rpx;
+  margin-top:25rpx;
+}
+.newlogin button{
+  background:#E6433E;
+  color:#fff;
+  height:95rpx;
+  font-size:35rpx;
+  line-height:95rpx;
+  }
+.bottomtxt{
+  height:110rpx;
+  line-height:110rpx;
+  background:#fff;
+  font-size:25rpx;
+  text-align: center;
+}
+.null{background:#F0EDF1;height:25rpx;}

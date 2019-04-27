@@ -1,0 +1,53 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='gettouxiang'> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <!-- userinfo -->
+  <view class='my_order'>
+    <view class='my_money'>
+      <text>余额0元 , 冻结0元</text>
+      <view class='my_btn'>
+        <button class='btn1'>充值</button>
+        <button class='btn2'>提现</button>
+      </view>
+    </view>
+    <view class='my_qiandao'>
+        <view class='my_ul'>
+            <view>当前积分 0</view>
+            <view><button>每日签到</button></view>
+        </view>
+        <view class='my_ul'>
+            <view>积分兑换</view>
+            <view><text>＞</text></view>
+        </view>
+        <view class='my_ul'>
+            <view>我的订单</view>
+            <view><text>＞</text></view>
+        </view>
+        <view class='my_ul'>
+            <view>我的收货地址</view>
+            <view><text>＞</text></view>
+        </view>
+        <view class='my_ul'>
+            <view>我的优惠券</view>
+            <view><text>＞</text></view>
+        </view>
+        <view class='bind'>
+            <button>绑定手机号码</button>
+        </view>
+    </view>
+  </view>
+  <view class='guanyu'>
+      <text>关于我们</text>
+  </view>
+  <view class='newlogin'>
+      <button>重新授权登录</button>
+  </view>
+  <view class='bottomtxt'><text>Powered by EastWorld v 5.0</text></view>
+  <view class='null'></view>
+</view>

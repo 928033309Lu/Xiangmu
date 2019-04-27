@@ -1,0 +1,136 @@
+<!--pages/details/details.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='xiangbox' id='detail'>
+  <!-- 有视频详情 -->
+  <video wx:if="{{v_id}}" src="{{src}}" style='width:100%;' autoplay controls></video>
+  <!-- 无视频的详情--轮播 -->
+  <swiper
+  wx:if="{{!v_id}}"
+  indicator-dots
+  autoplay
+  circular
+   style="background:#F3F3F3;"
+  interval="2000"
+  >
+    <block wx:for="{{pics}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.pic}}" mode="aspectFit" style='width:100%;'  />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 公共 -->
+  <view class='titlehead'>
+    <view>{{basicInfo.name}}</view>
+    <view style='color:red;'>{{basicInfo.characteristic}}</view>
+    <view style='color:gray;'>
+      <view style='color:red;'>
+        ￥{{basicInfo.minPrice}}
+        <text style='color:gray;text-decoration: line-through;'>￥{{basicInfo.originalPrice}}</text>
+      </view>
+      <view>库存：{{basicInfo.stores}}</view>
+      <view>拼团价：￥{{basicInfo.pingtuanPrice}}</view>
+    </view>
+    <view class='tu'>
+      <image src='/images/qd.png' style='width:80rpx;height:80rpx;'></image>
+      <view>分享有礼</view>
+    </view>
+    <button class='btnshare' open-type="share">分享</button>
+  </view>
+  <!-- 公共--尺寸 -->
+  <view class='yaoqing'>
+    <view bindtap='zhezhao'>
+      <view>选择尺寸 ： <text style='color:red;'>颜色--尺寸</text></view>
+      <view>＞</view>
+    </view>
+  </view>
+  
+  <!-- 公共--商品介绍 -->
+  <view class='introducebox'>
+      <view class='introduce'>商品介绍</view>
+      
+      <template is="wxParse"  data="{{wxParseData:img.nodes}}"/>   
+  </view>
+  <!-- 大家评价 -->
+  <view class='evaluate'>
+    <view class='evaluatebt'>大家评价<text class='btnum'>(4)</text></view>
+    <view class='pinglunlist'>
+      <view class='ul1'><image src=''></image></view>
+      <view class='ul2'>
+        <view class='pltxt1'>非常愉快的一次购物</view>
+        <view class='pltxt2'>2019-01-22 01:37:00</view>
+      </view>
+    </view>
+    <view class='haoping'>好评</view>
+  </view>
+<!-- 遮罩模块 -->
+  <view class='zhezhao' wx:if="{{show}}">
+      <view class='maskbox'>
+      <!-- 遮罩标题 -->
+        <view class='mask_title'>
+          <view class='fork' bindtap='offzhe'>X</view>
+          <view class='mask_img'><image src="{{basicInfo.pic}}"></image></view>
+          <view class='mask_txt'>
+            <view class='masktxt1'>{{basicInfo.name}}</view>
+            <view class='masktxt2'>￥ {{moneyObj.price?moneyObj.price:basicInfo.minPrice}}</view>
+          </view>
+        </view>
+        <!-- 颜色 -->
+        <view class='mask_color'>
+            <view class='mask_col_bt'>{{properties[0].name}}</view>
+            <view class='mask_color_div' >
+                <view class='div'
+                wx:for="{{properties[0].childsCurGoods}}" 
+                wx:key="index"
+                bindtap='col'
+                data-index="{{index}}"
+                data-p_idobj="{{item.propertyId}}:{{item.id}}"
+                class="{{activeCol==index?'activeCol':''}}"
+                >{{item.name}}</view>
+            </view>
+        </view>
+        <!-- 尺码 -->
+        <view class='mask_color'>
+            <view class='mask_col_bt'>{{properties[1].name}}</view>
+            <view class='mask_color_div'>
+              <view
+              wx:for="{{properties[1].childsCurGoods}}" 
+              wx:key="index"
+              bindtap='sizeCol'
+              data-index="{{index}}"
+              data-s_idobj="{{item.propertyId}}:{{item.id}}"
+              class="{{sizeCol==index?'activeCol':''}}"
+              >{{item.name}}</view>
+            </view>
+        </view>
+        <!-- 购买数量 -->
+        <view class='mask_shop'>
+          <view class='shoptxe'>购买数量</view>
+          <view class='shopbtn'>
+            <button bindtap='jian' disabled='{{num<=1}}'>-</button>
+            <view class='shopnum'>{{num}}</view>
+            <button bindtap='jia'>+</button>
+          </view>
+        </view>
+        <!-- 加入购物车 -->
+        <view><button bindtap='addShop' class='maskadd'>加入购物车</button></view>
+      </view>
+  </view>
+<!-- 最下面模块 -->
+  <view class='footer'>
+      <view class='foot_ul1' bindtap='onlineSpeak'>
+          <view><image src='/images/kefu.png'></image></view>
+          <view>客服</view>
+      </view> 
+      <view class='foot_ul2' bindtap='goShopCar'>
+          <view><image src='/images/icon-cart.png'></image></view>
+          <view class='shopnum'>({{len}})</view>
+          <view>购物车</view>
+      </view>
+      <view class='foot_ul3' bindtap='zhezhao'>
+          <button>加入购物车</button>
+      </view>
+      <view class='foot_ul4'>
+            <button>发起拼团</button>
+      </view>
+  </view>
+</view>

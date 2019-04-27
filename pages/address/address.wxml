@@ -1,0 +1,38 @@
+<!--pages/address/address.wxml-->  
+<view class='addressbox'>
+  <view class='iptbox'>
+      <text>联系人</text>
+      <input bindinput='linkManVal' placeholder-class='ipt' placeholder='联系人'></input>
+  </view>
+  <view class='iptbox'>
+      <text>手机号码</text>
+      <input bindinput='mobileVal' placeholder-class='ipt' placeholder='手机号码'></input>
+  </view>
+  <view class='iptbox'>
+      <text>选择地区</text>
+      <picker
+        mode="region"
+        bindchange="changeValue"
+        value="{{value}}"
+        style='color:#898989;margin:8rpx 0 0 18rpx;'
+      >
+        {{value[0]}} , {{value[1]}} , {{value[2]}}
+      </picker>
+  </view>
+  <view class='iptbox'>
+      <text>详细地址</text>
+      <input bindinput='addressVal' placeholder-class='ipt' placeholder='街道门派信息'></input>
+  </view>
+  <view class='iptbox'>
+      <text>邮政编号</text>
+      <input bindinput='codeVal' placeholder-class='ipt' placeholder='邮政编号'></input>
+  </view>
+  <view class='btnbox'>
+    <button bindtap='add' type='primary'>保存</button>
+    <button type='warn'>从微信读取</button>
+    <button bindtap='quxiao'>取消</button>
+  </view>
+
+
+
+</view>

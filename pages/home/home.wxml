@@ -1,0 +1,77 @@
+<!--pages/home/home.wxml-->
+
+<view id='home_box'>
+  <view class='header'>
+    <input placeholder-class="ipt" bindinput='onipt' bindconfirm='keyDown' placeholder='请输入搜索内容'></input>
+    <image class='search-pic' src="/images/search-pic.png"></image>
+    <button class='search_btn' bindtap='search'>搜索</button>
+  </view>
+<!-- 轮播 -->
+  <swiper
+  autoplay
+  circular
+  interval="3000"
+  indicator-active-color="#fff"
+  indicator-color="gainsboro"
+  indicator-dots
+  class='banner_box'>
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.picUrl}}" class='imgs' />
+      </swiper-item>
+    </block>
+  </swiper>
+
+<!-- 横向导航 -->
+  <scroll-view
+    scroll-x
+    class='nav'
+  >
+    <view class='nav_list'>
+        <view 
+        wx:for="{{navlist}}" 
+        bindtap='bindtapNav'
+        class='{{nav_active==index?"navActive":""}}'
+        data-index="{{index}}"
+        data-id="{{item.id}}"
+        wx:key="index">{{item.name}}</view>
+    </view>
+  </scroll-view>
+<!-- 公告 -->
+  <view class='notice'>
+    <view>
+      公告： <text> 商城新开张，优惠多多，戳戳戳我看详情</text>
+    </view>
+  </view>
+
+<!-- 优惠横向 -->
+  <scroll-view
+    scroll-x
+    class='you'
+  >
+    <view class='you_list'>
+        <image src='/images/you.png'></image>
+        <image src='/images/you1.png'></image>
+        <image src='/images/you1.png'></image>
+    </view>
+  </scroll-view>
+<!-- 商品列表 -->
+
+    <view class='shoplist'>
+      <view wx:for="{{shoplist}}" wx:key="index">
+        <image src="{{item.pic}}" 
+        bindtap="goDetails"
+        data-v_id="{{item.videoId}}"
+        data-id="{{item.id}}"/>
+        <view>
+          <view>{{item.name}}</view>
+          <view class='newprice'>{{item.originalPrice}}元</view>
+          <view class="oldprice">{{item.minPrice}}元</view>
+        </view>
+      </view>
+    </view>
+
+
+
+</view>
+

@@ -1,0 +1,48 @@
+<!--pages/shopcar/shopcar.wxml-->
+<view class='shopbox'>
+<!-- 购物车标题 -->
+  <view class='shop_title'>
+    <view>微商城</view>
+    <view bindtap='gaiTap' class='bianji' wx:if="{{show}}">编辑</view>
+    <view bindtap='gaiTap' class='wancheng' wx:if="{{!show}}">完成</view>
+  </view>
+<!-- 购物车列表 -->
+  <view class='shop_list'>
+    <view class='shop_car' wx:for="{{objArr}}" wx:key="index">
+        <view class='shop_cardiv1'>
+        <checkbox-group bindchange="danxuan" data-index="{{index}}">
+          <checkbox checked='{{item.isChecked}}'></checkbox>
+        </checkbox-group>
+        </view>
+        <view class='shop_cardiv2'>
+          <image src='{{item.img}}'></image>
+        </view>
+        <view class='shop_cardiv3'>
+          <view class='div3txt1'>{{item.name}}</view>
+          <text class='div3txt2'>颜色：{{item.aaacolName}}
+          尺寸：{{item.aaasizeName}}
+          </text>
+          <view style='margin-top:16rpx;'>单价：￥{{item.price}}元</view>
+        </view>
+        <view class='shop_cardiv4'>
+            <button disabled='{{item.num<=1}}' bindtap='jian' data-id="{{item.id}}">-</button>
+            <view class='div4num'>{{item.num}}</view>
+            <button bindtap='jia' data-id="{{item.id}}">+</button>
+        </view>
+    </view>
+  </view>
+<!-- 购物车页脚 -->
+  <view class='shop_footer'>
+    <view class='footer1'>
+    <checkbox-group bindchange="quanxuan">
+      <checkbox checked='{{isallChecked}}'></checkbox>全选
+    </checkbox-group>
+    </view>
+    <view class='footer2' wx:if="{{show}}">合计：￥{{zongjia}}</view>
+    <view class='footer3'>
+      <button bindtap='gojie' wx:if="{{show}}" class='btn1'>去结算</button>
+      <button bindtap='del' wx:if="{{!show}}" class='btn2'>删除</button>
+    </view>
+  </view>
+</view>
+

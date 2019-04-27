@@ -1,0 +1,27 @@
+<!--pages/face/face.wxml-->
+<view class='shouyebox'>
+    <view class='sy_top'>
+      <image src='/images/more/title8.png' class='title'></image>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+
+        <view class="waveWrapper waveAnimation">
+          <view class="waveWrapperInner bgTop">
+            <view class="wave waveTop" style="background-image:url('http://image.weilanwl.com/img/wave-top.png')"></view>
+          </view>
+          <view class="waveWrapperInner bgMiddle">
+            <view class="wave waveMiddle" style="background-image:url('http://image.weilanwl.com/img/wave-mid.png')"></view>
+          </view>
+          <view class="waveWrapperInner bgBottom">
+            <view class="wave waveBottom" style="background-image:url('http://image.weilanwl.com/img/wave-bot.png')"></view>
+          </view>
+        </view>
+    </view>
+    <view class='text'>
+        <image src='/images/more/confirm-word1.png' class='text_img'></image>
+    </view>
+    <view class="store">
+        <button bindtap="bindHomeTap">进入店铺</button>
+    </view>
+</view>
+
+  

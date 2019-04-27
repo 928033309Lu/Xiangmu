@@ -1,0 +1,137 @@
+/* pages/home/home.wxss */
+#home_box{
+  /* height: 100%; */
+  position: relative;
+}
+.header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  height: 100rpx;
+  width: 100%;
+  /* border-bottom: 1px solid red; */
+  background: linear-gradient(to bottom,rgba(103,195,169,0.5),rgba(103,195,169,0.1))
+}
+.header>input{
+  background: #fff;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 15rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  padding-left: 60rpx;
+  box-sizing: border-box;
+}
+.ipt{
+  font-size: 28rpx;
+}
+.search-pic{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 26rpx;
+  left: 11%;
+}
+.search_btn{
+  padding: 0;
+  margin: 0;
+  width: 140rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  background: #AE66AE;
+  border: none;
+  color: #fff;
+  border-radius: 0 10rpx 10rpx 0;
+  position: absolute;
+  z-index: 55;
+  top: 14rpx;
+  right: 10%;
+}
+/* 轮播 */
+.banner_box{
+  height: 500rpx;
+}
+.banner_box .imgs{
+  width: 100%;
+  height: 100%;
+}
+/* 横向导航 */
+.nav{
+  height: 80rpx;
+  width: 100%;
+  padding-bottom: 10rpx;
+}
+.nav_list{
+  display: flex;
+  width: 200%;
+}
+.nav_list>view{
+  flex: 1;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 78rpx;
+}
+.navActive{
+  color: red;
+  border-bottom: 1px solid red;
+}
+/* 公告 */
+.notice{
+  background: #F7F7FA;
+  padding: 8rpx 0;
+}
+.notice>view{
+  background: #fff;
+  font-size: 26rpx;
+  line-height: 80rpx;
+  padding-left: 20rpx;
+}
+.notice>view>text{
+  color: red;
+}
+/* 横向优惠 */
+.you{
+  width: 100%;
+}
+.you_list{
+  width: 120%;
+  padding: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.you_list image{
+  width: 35%;
+  margin-right: 2%;
+  height: 160rpx;
+}
+.you_list image:last-child{
+  margin: 0;
+}
+/* 商品列表 */
+.shoplist{
+  display: flex;
+  flex-flow: wrap;
+  width: 100%;
+}
+.shoplist>view{
+  width: 50%;
+  box-sizing: border-box;
+  padding: 10rpx;
+}
+.newprice{
+  font-size: 28rpx;
+  color: red;
+}
+.oldprice{
+  text-decoration: line-through;
+  font-size: 28rpx;
+  color: gainsboro;
+}
+.shoplist>view image{
+  width: 100%;
+  border-radius: 10rpx;
+}
+
+

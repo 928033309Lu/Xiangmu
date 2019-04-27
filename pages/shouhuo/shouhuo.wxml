@@ -1,0 +1,21 @@
+<!--pages/shouhuo/shouhuo.wxml-->
+
+<view class='shuoBox'>
+  <view class='head'>
+    <text>请选择以下收货地址</text>
+    <button bindtap='queren' type='primary'  class='btn'>确认选择</button>
+  </view>
+  <radio-group>
+    <view class='list' wx:for="{{shouArr}}" wx:key="index">
+      <radio bindtap="aaa" data-index="{{index}}" checked="{{item.isChecked}}" />
+      <view>
+        <text>姓名：{{item.linkMan}}
+        手机：{{item.mobile}}
+        {{item.cityStr}} --- {{item.address}}
+        </text>
+      </view>
+    </view>
+  </radio-group >
+
+<button class='lastbtn' type='warn' bindtap='goAddress'>新增收货地址</button>
+</view>
